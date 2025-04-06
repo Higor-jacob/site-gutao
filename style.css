@@ -154,7 +154,7 @@ a:hover {
 .projetos-carousel {
   display: flex;
   gap: 2rem;
-  animation: scrollProjetos 45s linear infinite;
+  animation: scrollProjetos 10s linear infinite;
 }
 
 .projetos-carousel:hover {
