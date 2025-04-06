@@ -1,0 +1,307 @@
+/* Reset e configurações básicas */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0f172a;
+  color: #f8fafc;
+  line-height: 1.6;
+}
+
+section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+h1,
+h2,
+h3 {
+  color: #facc15;
+}
+
+a {
+  color: #facc15;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #fde047;
+  text-decoration: none;
+}
+
+/* Hero */
+/*.hero {
+  background-color: #1e293b;
+  padding: 5rem 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}*/
+
+.hero {
+  background-image: url("Imagem/FotosVereador/banner.JPG");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 50vh; /* ou 60vh, se quiser menor */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* escurecimento */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.scroll-down span {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-bottom: 3px solid #fff;
+  border-right: 3px solid #fff;
+  transform: rotate(45deg);
+  animation: scroll-down 1.5s infinite;
+  opacity: 0.7;
+}
+
+@keyframes scroll-down {
+  0% {
+    transform: rotate(45deg) translateY(0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: rotate(45deg) translateY(10px);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(45deg) translateY(0);
+    opacity: 0.7;
+  }
+}
+.shadow-section {
+  background-color: #1e293b;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+/* Sobre */
+.img-redonda {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 1rem;
+  border: 4px solid #facc15;
+}
+
+.projetos-carousel-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projetos-carousel {
+  display: flex;
+  gap: 2rem;
+  animation: scrollProjetos 45s linear infinite;
+}
+
+.projetos-carousel:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollProjetos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Estilo dos cards do carrossel de projetos */
+.projeto-card {
+  /*background: #334155;*/
+  padding: 1.5rem;
+  border-radius: 12px;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  /*box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);*/
+}
+
+.projeto-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 1);
+}
+
+/* Imagem do card */
+.img-card {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0 auto 10px auto;
+  display: block;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Título do card */
+.projeto-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  color: #f1f5f9;
+}
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.pdf-icon {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+/* Evita quebra nos cards ao animar */
+.projeto-card {
+  flex: 0 0 auto;
+  width: 300px;
+}
+
+/* Redes sociais com ícones */
+.icon-social {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+/* Embeds */
+.social-embeds {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.embed-card {
+  background: #334155;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.embed-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Fale com o vereador */
+.whatsapp-button {
+  background-color: #22c55e;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 1rem;
+  animation: neonPulse 2s infinite alternate;
+  text-shadow: 0 0 4px white;
+  box-shadow: 0 0 8px #22c55e, 0 0 16px #22c55e;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  background-color: #16a34a;
+}
+
+@keyframes neonPulse {
+  from {
+    box-shadow: 0 0 8px #22c55e, 0 0 16px #22c55e;
+  }
+  to {
+    box-shadow: 0 0 20px #22c55e, 0 0 40px #22c55e;
+  }
+}
+/* Responsividade */
+@media (max-width: 768px) {
+  .projetos-lista {
+    flex-direction: column;
+    align-items: center;
+  }
+  .social-embeds {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.footer {
+  background-color: #0f172a;
+  color: #f8fafc;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #334155;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
